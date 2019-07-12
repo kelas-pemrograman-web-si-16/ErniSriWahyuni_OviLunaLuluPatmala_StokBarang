@@ -1,0 +1,54 @@
+include  ../../users/dashboard
+// Content Wrapper. Contains page content
+.content-wrapper
+    // Content Header (Page header)
+    section.content-header
+        h1
+            | Data Barang
+        ol.breadcrumb
+            li
+                a(href='#')
+                    i.fa.fa-dashboard
+                    |  Home
+            li
+                a(href='#') Tables
+            li.active Data tables
+    // Main content
+    section.content
+        .row
+            .col-xs-12
+                // /.box-body
+                // /.box
+                .box
+                    .box-body
+                        .box.box-info
+                            .box-header.with-border
+                                h3.box-title Input data barang
+                            // /.box-header
+                            // form start
+                            form.form-horizontal(method="POST", action='/'+datas._id + '/editdata')
+                                .box-body
+                                    .form-group
+                                        label.col-sm-2.control-label(for='kode_barang') Kode Barang
+                                        .col-sm-10
+                                            input#kode_barang.form-control(type='text' required name="kode_barang" placeholder='Kode Barang' value= (kode_barang == undefined) ? datas.kode_barang: kode_barang)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='nama_barang') Nama Barang
+                                        .col-sm-10
+                                            input#nama_barang.form-control(type='text' name="nama_barang" placeholder='Nama Barang' value= (nama_barang == undefined) ? datas.nama_barang: nama_barang)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='jenis_barang') Jenis Barang
+                                        .col-sm-10
+                                            input#jenis_barang.form-control(type='text' name="jenis__barang" placeholder='Jenis Barang' value= (jenis_barang == undefined) ? datas.jenis_barang: jenis_barang)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='harga_barang') Harga Barang
+                                        .col-sm-10
+                                            input#harga_barang.form-control(type='harga_barang' name="harga_barang" placeholder='Harga Barang' value= (harga_barang == undefined) ? datas.harga_barang: harga_barang)
+
+
+
+                                // /.box-body
+                                .box-footer
+                                    button.btn.btn-info.pull-right(type='submit') Input Data
+                                // /.box-footer
+

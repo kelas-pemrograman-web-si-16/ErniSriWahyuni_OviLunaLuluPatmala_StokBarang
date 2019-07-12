@@ -1,0 +1,49 @@
+include  ../../users/dashboard
+// Content Wrapper. Contains page content
+.content-wrapper
+    // Content Header (Page header)
+    section.content-header
+        h1
+            | Data Barang
+        ol.breadcrumb
+            li
+                a(href='#')
+                    i.fa.fa-dashboard
+                    |  Home
+            li
+                a(href='#') Tables
+            li.active Data tables
+    // Main content
+    section.content
+        .row
+            .col-xs-12
+                // /.box-body
+                // /.box
+                .box
+                    .box-body
+                        .box.box-info
+                            .box-header.with-border
+                                h3.box-title Input data barang
+                            // /.box-header
+                            // form start
+                            form.form-horizontal(method="POST", action='/'+barangmasuks._id + '/dataedit')
+                                .box-body
+                                    .form-group
+                                        label.col-sm-2.control-label(for='kodebarangg') Kode Barang
+                                        .col-sm-10
+                                            input#kodebarangg.form-control(type='text' required name="kodebarangg" placeholder='Kode Barang' value= (kodebarangg == undefined) ? barangmasuks.kodebarangg: kodebarangg)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='namabarangg') Nama Barang
+                                        .col-sm-10
+                                            input#namabarangg.form-control(type='text' name="namabarangg" placeholder='Nama Barang' value= (namabarangg == undefined) ? barangmasuks.namabarangg: namabarangg)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='jenisbarangg') Jenis Barang
+                                        .col-sm-10
+                                            input#jenisbarangg.form-control(type='text' name="jenisbarangg" placeholder='Jenis Barang' value= (jenisbarangg == undefined) ? barangmasuks.jenisbarangg: jenisbarangg)
+
+
+                                // /.box-body
+                                .box-footer
+                                    button.btn.btn-info.pull-right(type='submit') Input Data
+                                // /.box-footer
+

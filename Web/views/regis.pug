@@ -1,0 +1,47 @@
+html
+    head
+        include head.pug
+    body
+        .page-wrapper.bg-gra-02.p-t-130.p-b-100.font-poppins
+            .wrapper.wrapper--w680
+                .card.card-4
+                    .card-body
+                        h2.title Registration Form
+                        form(method='POST', action='/regis/', role='form')
+                            .row.row-space
+                                .col-2
+                                    .input-group
+                                        label.label first name
+                                        input.input--style-4(type='text', name='firstname')
+                                .col-2
+                                    .input-group
+                                        label.label last name
+                                        input.input--style-4(type='text', name='lastname')
+                            .row.row-space
+                                .col-2
+                                    .input-group
+                                        label.label Username
+                                        input.input--style-4(type='text', name='username')
+                                .col-2
+                                    .input-group
+                                        label.label Email
+                                        input.input--style-4(type='email', name='email')
+                            .input-group
+                                label.label Password
+                                .rs-select2.js-select-simple.select--no-search
+                                    input.input--style-4(type='password', name='password')
+                            .input-group
+                                .p-t-15
+                                    button.btn.btn--radius-2.btn--blue(type='submit') Submit
+                            .input-group
+                                label.label Sudah Punya akun ?
+                                    a(href="/login") login disini
+
+        // Jquery JS
+        script(src='loginasset/vendor/jquery/jquery.min.js')
+        // Vendor JS
+        script(src='loginasset/vendor/select2/select2.min.js')
+        script(src='loginasset/vendor/datepicker/moment.min.js')
+        script(src='loginasset/vendor/datepicker/daterangepicker.js')
+        // Main JS
+        script(src='loginasset/js/global.js')

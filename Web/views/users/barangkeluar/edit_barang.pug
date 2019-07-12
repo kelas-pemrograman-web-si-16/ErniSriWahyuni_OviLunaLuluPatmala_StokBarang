@@ -1,0 +1,49 @@
+include  ../../users/dashboard
+// Content Wrapper. Contains page content
+.content-wrapper
+    // Content Header (Page header)
+    section.content-header
+        h1
+            | Data Barang
+        ol.breadcrumb
+            li
+                a(href='#')
+                    i.fa.fa-dashboard
+                    |  Home
+            li
+                a(href='#') Tables
+            li.active Data tables
+    // Main content
+    section.content
+        .row
+            .col-xs-12
+                // /.box-body
+                // /.box
+                .box
+                    .box-body
+                        .box.box-info
+                            .box-header.with-border
+                                h3.box-title Input data barang
+                            // /.box-header
+                            // form start
+                            form.form-horizontal(method="POST", action='/'+barangkeluars._id + '/keluaredit')
+                                .box-body
+                                    .form-group
+                                        label.col-sm-2.control-label(for='kodebarang') Kode Barang
+                                        .col-sm-10
+                                            input#kodebarang.form-control(type='text' required name="kodebarang" placeholder='Kode Barang' value= (kodebarang == undefined) ? barangkeluars.kodebarang: kodebarang)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='namabarang') Nama Barang
+                                        .col-sm-10
+                                            input#namabarang.form-control(type='text' name="namabarang" placeholder='Nama Barang' value= (namabarang == undefined) ? barangkeluars.namabarang: namabarang)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='jenisbarang') Jenis Barang
+                                        .col-sm-10
+                                            input#jenisbarang.form-control(type='text' name="jenisbarang" placeholder='Jenis Barang' value= (jenisbarang == undefined) ? barangkeluars.jenisbarang: jenisbarang)
+
+
+                                // /.box-body
+                                .box-footer
+                                    button.btn.btn-info.pull-right(type='submit') Input Data
+                                // /.box-footer
+
